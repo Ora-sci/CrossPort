@@ -3,6 +3,6 @@ services:
   your_service_name:
     build: .
     ports:
-      - "9000:9001"
+      - "7500:7501"
     env_file:
       - .env
