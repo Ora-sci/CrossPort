@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { generateMint } = require('../controllers/index');
+const User = require('../models/User')
 
 // Mint NFT API
 // router.post('/generate/:address', async (req, res, next) => {
