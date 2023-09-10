@@ -29,16 +29,16 @@ router.post('/generate/:address', async (req, res, next) => {
       const newUser = new User({
         _id: userId,
         id: userId, 
-        picture: req.user.picture,
+        // picture: req.user.picture,
         socials: [{
           id: userId,
           platform: 'custom', 
           soulbound_flag: soulboundFlag,
         }],
-        user_id: req.user.username,
-        user_name: req.user.displayName,
+        // user_id: req.user.username,
+        // user_name: req.user.displayName,
       });
-
+      console.log(newUser);
       await newUser.save();
       console.log('User Info stored:', newUser);
     } else {
@@ -59,8 +59,8 @@ router.post('/generate/:address', async (req, res, next) => {
 
     res.status(200).json({ message: 'NFT minted successfully.' });
   } catch (error) {
-    console.log(error);
-    res.status(500).json({ error: 'Failed to mint NFT.' });
+    // console.log(error);
+    // res.status(500).json({ error: 'Failed to mint NFT.' });
   }
 });
 
